@@ -2,6 +2,7 @@ from note_rpa import main_play
 from dotenv import load_dotenv
 import os
 import glob
+import time
 
 # Load the environment variables from .env
 load_dotenv()
@@ -40,4 +41,6 @@ for mp3_file in mp3_files:
     # Create a .done file to indicate the mp3 has been processed
     open(done_file, 'a').close()
     print(f"Created empty file: {done_file}")
+
+    time.sleep(5)
 
