@@ -70,14 +70,15 @@ def transcribe_audio(filename):
 
 def summarize_text(text):
     response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo-1106",
+            #model="gpt-3.5-turbo-0125",
+            model="gpt-4-turbo-preview",
             response_format={ "type": "json_object" },
             messages=[
                 {
                     "role": "system",
                     "content": "あるラジオ番組での文字起こしを要約します。"
-                                "番組の内容をブログなどで紹介するような口調にしてください。"
-                                "ラジオ番組であることや番組自体の紹介は不要です。なるべく内容に注目してください。"
+                                "番組の内容をブログなどで詳細に紹介するような口調にしてください。"
+                                "ラジオ番組であることや番組自体の紹介は不要です。なるべく内容に注目して詳細に書いてください。"
                                 "出力は純粋なJSON形式でお願いします。" 
                                 "{"
                                     "title:タイトル（20文字以内で内容に最も適したタイトル）\n" 
